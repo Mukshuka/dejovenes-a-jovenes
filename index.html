@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Jóvenes a Jóvenes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <button class="menu-toggle" aria-label="Menú">☰</button>
+        <ul class="nav">
+            <li><a href="#hero">Inicio</a></li>
+            <li><a href="talleres.html">Talleres</a></li>
+            <li>
+                <a href="#">Recursos ▾</a>
+                <ul>
+                    <li><a href="#contacto">Contáctanos</a></li>
+                    <li><a href="#trabajemos">Colabora</a></li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="container">
+            <h1 class="section-title">De Jóvenes a Jóvenes</h1>
+            <a href="#registro" class="button button-primary" id="registro-btn">¡Comienza tu cambio!</a>
+        </div>
+    </section>
+
+    <section id="registro" class="section section-light">
+        <div class="container">
+            <h2 class="section-title">Regístrate en el Taller</h2>
+            <form class="card form-grid">
+                <div class="form-group">
+                    <label for="nombre" class="sr-only">Nombre</label>
+                    <input type="text" id="nombre" placeholder="Nombre" class="input-field" required>
+                    <span class="error-message">Este campo es obligatorio</span>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="sr-only">Email</label>
+                    <input type="email" id="email" placeholder="Email" class="input-field" required>
+                    <span class="error-message">Ingresa un email válido</span>
+                </div>
+                <div class="form-group">
+                    <label for="telefono" class="sr-only">Teléfono</label>
+                    <input type="tel" id="telefono" placeholder="Teléfono (opcional)" class="input-field">
+                </div>
+                <div class="form-group">
+                    <label for="motivo" class="sr-only">Motivo</label>
+                    <textarea id="motivo" class="input-field" rows="5" placeholder="¿Por qué quieres unirte?" required></textarea>
+                    <span class="error-message">Por favor completa este campo</span>
+                </div>
+                <button type="submit" class="button button-primary">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="section" id="comentarios">
+        <div class="container">
+            <h2 class="section-title">Comparte tus experiencias</h2>
+            <div class="card form-grid">
+                <form id="comment-form">
+                    <div class="form-group">
+                        <label for="comment-name" class="sr-only">Nombre</label>
+                        <input type="text" id="comment-name" placeholder="Nombre" class="input-field" required>
+                        <span class="error-message">Ingresa tu nombre</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment-message" class="sr-only">Mensaje</label>
+                        <textarea id="comment-message" class="input-field" placeholder="Tu mensaje..." required></textarea>
+                        <span class="error-message">Escribe tu mensaje</span>
+                    </div>
+                    <button type="submit" class="button button-primary">Publicar</button>
+                </form>
+            </div>
+            <br>
+            <div class="content-grid comments-container">
+                <div class="card comment-card">
+                    <div class="comment-header">
+                        <div class="user-avatar"></div>
+                        <div class="user-info">
+                            <h4>Ana Martínez</h4>
+                            <small>Participante del taller</small>
+                        </div>
+                    </div>
+                    <div class="comment-content">
+                        <p>Este taller cambió mi perspectiva completamente. ¡Recomendado al 100%!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light" id="contacto">
+        <div class="container">
+            <h2 class="section-title">Contáctanos</h2>
+            <div class="contact-grid">
+                <div class="card contact-info">
+                    <div class="info-item">
+                        <div class="icon-circle" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/>
+                            </svg>
+                        </div>
+                        <p>Calle Iturbide #10</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon-circle" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </div>
+                        <p>dejovenesajovenes@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light" id="trabajemos">
+        <div class="container">
+            <h2 class="section-title">Trabajemos juntos</h2>
+            <div class="contact-grid">
+                <form class="card form-grid">
+                    <div class="form-group">
+                        <label for="colabora-nombre" class="sr-only">Nombre</label>
+                        <input type="text" id="colabora-nombre" placeholder="Nombre" class="input-field" required>
+                        <span class="error-message">Ingresa tu nombre</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="colabora-email" class="sr-only">Email</label>
+                        <input type="email" id="colabora-email" placeholder="Email" class="input-field" required>
+                        <span class="error-message">Ingresa un email válido</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="colabora-mensaje" class="sr-only">Mensaje</label>
+                        <textarea id="colabora-mensaje" class="input-field" rows="5" placeholder="Mensaje" required></textarea>
+                        <span class="error-message">Escribe tu mensaje</span>
+                    </div>
+                    <button type="submit" class="button button-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="section section-light">
+        <div class="container">
+            <p class="footer-text">&copy; 2025 De Jóvenes a Jóvenes</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menú responsivo
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav') && !e.target.matches('.menu-toggle')) {
+                navMenu.classList.remove('active');
+                menuToggle.textContent = '☰';
+            }
+        });
+
+        // Cerrar menú al hacer clic en enlaces (móvil)
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navMenu.classList.remove('active');
+                    menuToggle.textContent = '☰';
+                }
+            });
+        });
+
+        // Validación de formularios
+        document.addEventListener('DOMContentLoaded', () => {
+            const forms = document.querySelectorAll('form');
+            
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    let isValid = true;
+
+                    this.querySelectorAll('[required]').forEach(input => {
+                        const error = input.nextElementSibling;
+                        if (!input.value.trim()) {
+                            isValid = false;
+                            input.classList.add('invalid');
+                            error.style.display = 'block';
+                        } else {
+                            input.classList.remove('invalid');
+                            error.style.display = 'none';
+                        }
+                    });
+
+                    // Validación específica de email
+                    const emailFields = this.querySelectorAll('input[type="email"]');
+                    emailFields.forEach(emailField => {
+                        if (!/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(emailField.value)) {
+                            isValid = false;
+                            emailField.classList.add('invalid');
+                            emailField.nextElementSibling.textContent = "Formato de email inválido";
+                        }
+                    });
+
+                    if (isValid) {
+                        showToast('✔️ Formulario enviado correctamente');
+                        this.reset();
+                    }
+                });
+
+                // Resetear errores al escribir
+                form.querySelectorAll('input, textarea').forEach(input => {
+                    input.addEventListener('input', () => {
+                        input.classList.remove('invalid');
+                        input.nextElementSibling.style.display = 'none';
+                    });
+                });
+            });
+        });
+
+        // Sistema de comentarios
+        document.getElementById('comment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = this.querySelector('#comment-name').value;
+            const message = this.querySelector('#comment-message').value;
+            
+            const commentHTML = `
+                <div class="card comment-card">
+                    <div class="comment-header">
+                        <div class="user-avatar"></div>
+                        <div class="user-info">
+                            <h4>${name}</h4>
+                            <small>Nuevo participante</small>
+                        </div>
+                    </div>
+                    <div class="comment-content">
+                        <p>${message}</p>
+                    </div>
+                </div>
+            `;
+            
+            document.querySelector('.comments-container').insertAdjacentHTML('afterbegin', commentHTML);
+            this.reset();
+            showToast('💬 Comentario publicado');
+        });
+
+        // Mostrar sección de registro
+        document.getElementById('registro-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('registro').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Función de feedback
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast-message';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => toast.remove(), 3000);
+        }
+    </script>
+</body>
+</html>

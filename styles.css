@@ -1,0 +1,319 @@
+/* ========= VARIABLES Y ESTILOS BASE ========= */
+:root {
+    --primary-1: #4361ee;
+    --primary-2: #4895ef;
+    --accent-1: #f72585;
+    --accent-2: #b5179e;
+    --light: #f8f9fa;
+    --dark: #2b2d42;
+    --gradient-hero: linear-gradient(135deg, var(--primary-1) 0%, var(--primary-2) 100%);
+    --gradient-card: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    --container-width: 1200px;
+}
+
+/* ========= RESET Y ELEMENTOS GENERALES ========= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* ========= COMPONENTES REUTILIZABLES ========= */
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section {
+    padding: 5rem 0;
+    flex: 1;
+}
+
+.card {
+    background: var(--gradient-card);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    margin-bottom: 2rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.button-primary {
+    background: linear-gradient(45deg, var(--accent-1), var(--accent-2));
+    color: white;
+    box-shadow: 0 5px 15px rgba(247, 37, 133, 0.3);
+}
+
+.button-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(247, 37, 133, 0.4);
+}
+
+.button-primary:active {
+    transform: scale(0.98);
+}
+
+/* ========= NAVEGACIÓN ========= */
+.nav {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    background: #000;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav > li {
+    position: relative;
+}
+
+.nav a {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.nav a:hover {
+    background-color: #434343;
+}
+
+/* Submenús - Desktop */
+.nav li ul {
+    display: none;
+    position: absolute;
+    background: #000;
+    min-width: 180px;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.nav li:hover > ul {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.nav li li ul {
+    left: 100%;
+    top: 0;
+}
+
+.menu-toggle {
+    display: none;
+    padding: 1rem;
+    background: #000;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* ========= FORMULARIOS ========= */
+.form-grid {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.input-field {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.input-field:focus {
+    border-color: var(--primary-1);
+    outline: none;
+    box-shadow: 0 4px 15px rgba(67, 97, 238, 0.1);
+}
+
+.input-field.invalid {
+    border-color: var(--accent-1);
+    animation: shake 0.4s ease;
+}
+
+.error-message {
+    display: none;
+    color: var(--accent-1);
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    padding-left: 0.5rem;
+    animation: fadeIn 0.3s ease;
+}
+
+/* ========= SECCIÓN HERO ========= */
+.hero {
+    min-height: 100vh;
+    background: var(--gradient-hero);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+/* ========= COMPONENTES ESPECÍFICOS ========= */
+.user-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--primary-1);
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+}
+
+.user-avatar:hover {
+    transform: scale(1.1);
+}
+
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, var(--primary-1), var(--primary-2));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.icon-circle svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.comment-card {
+    transition: all 0.3s ease;
+}
+
+.comment-card:hover {
+    background: linear-gradient(145deg, #ffffff 0%, #f0f2f5 100%);
+}
+
+/* ========= ANIMACIONES ========= */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-8px); }
+    40% { transform: translateX(8px); }
+    60% { transform: translateX(-5px); }
+    80% { transform: translateX(5px); }
+}
+
+.toast-message {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--dark);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from { transform: translate(-50%, 100%); opacity: 0; }
+    to { transform: translate(-50%, 0); opacity: 1; }
+}
+
+/* ========= MEDIA QUERIES ========= */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        flex-direction: column;
+        display: none;
+        position: absolute;
+        width: 100%;
+        top: 100%;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .nav li ul {
+        position: static;
+        background: #222;
+        box-shadow: none;
+    }
+
+    .section {
+        padding: 3rem 0;
+    }
+    
+    .card {
+        padding: 1.5rem;
+    }
+    
+    .button {
+        width: 100%;
+    }
+
+    .form-grid {
+        gap: 1rem;
+    }
+
+    .comment-content p {
+        padding-left: 1.5rem;
+    }
+}

@@ -20,7 +20,7 @@ exports.handler = async (event) => {
   
   let mailOptions = {
     from: '"De Jóvenes a Jóvenes" <no-reply@tudominio.com>',
-    to: 'dejovenesajovenes@gmail.com.com',   // Cambia por tu correo real o el que quieras usar
+    to: 'dejovenesajovenescontacto@gmail.com',   // Cambia por tu correo real o el que quieras usar
     subject: `Nuevo registro de ${nombre}`,
     text: `Se registró con los siguientes datos:\nNombre: ${nombre}\nEmail: ${email}\nTeléfono: ${telefono}\nMotivo: ${motivo}`
   };

@@ -121,34 +121,6 @@
     </div>
   </main>
 
-  <!-- Sección Trabajemos Juntos con integración -->
-  <section class="section section-light" id="trabajemos">
-    <div class="container">
-      <h2 class="section-title">Trabajemos juntos</h2>
-      <div class="contact-grid">
-        <!-- Se agrega id="colabora-form" para enviar los datos vía JavaScript -->
-        <form class="card form-grid" id="colabora-form">
-          <div class="form-group">
-            <label for="colabora-nombre-talleres" class="sr-only">Nombre</label>
-            <input type="text" id="colabora-nombre-talleres" placeholder="Nombre" class="input-field" required>
-            <span class="error-message">Ingresa tu nombre</span>
-          </div>
-          <div class="form-group">
-            <label for="colabora-email-talleres" class="sr-only">Email</label>
-            <input type="email" id="colabora-email-talleres" placeholder="Email" class="input-field" required>
-            <span class="error-message">Ingresa un email válido</span>
-          </div>
-          <div class="form-group">
-            <label for="colabora-mensaje-talleres" class="sr-only">Mensaje</label>
-            <textarea id="colabora-mensaje-talleres" class="input-field" rows="5" placeholder="Mensaje" required></textarea>
-            <span class="error-message">Escribe tu mensaje</span>
-          </div>
-          <button type="submit" class="button button-primary">Enviar</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
   <footer class="section section-light">
     <div class="container">
       <p class="footer-text">&copy; 2025 De Jóvenes a Jóvenes</p>
@@ -203,7 +175,7 @@
             }
           });
 
-          if (isValid && this.id !== 'colabora-form') {
+          if (isValid) {
             showToast('✔️ Formulario enviado correctamente');
             this.reset();
           }
@@ -228,31 +200,6 @@
       
       setTimeout(() => toast.remove(), 3000);
     }
-
-    // Integración del formulario "Trabajemos juntos" con la función serverless "colabora"
-    document.getElementById('colabora-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const formData = {
-        nombre: document.getElementById('colabora-nombre-talleres').value,
-        email: document.getElementById('colabora-email-talleres').value,
-        mensaje: document.getElementById('colabora-mensaje-talleres').value,
-      };
-      try {
-        const response = await fetch('/.netlify/functions/colabora', {
-          method: 'POST',
-          body: JSON.stringify(formData)
-        });
-        const data = await response.json();
-        if (data.success) {
-          showToast('✔️ Formulario enviado correctamente');
-          e.target.reset();
-        } else {
-          showToast('❌ Hubo un error al enviar el formulario');
-        }
-      } catch (err) {
-        showToast('❌ Error de red');
-      }
-    });
   </script>
 </body>
 </html>
